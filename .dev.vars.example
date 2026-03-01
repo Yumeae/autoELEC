@@ -1,0 +1,50 @@
+# ========== 查询接口配置 ==========
+ELEC_API_URL=http://wxykt.tiangong.edu.cn/charge/feeitem/getThirdData
+AUTHORIZATION=Basic Y2hhcmdlOmNoYXJnZV9zZWNyZXQ=
+SYNJONES_AUTH_TOKEN=
+REQUEST_COOKIE=
+
+FEEITEM_ID=428
+FEE_TYPE=IEC
+FEE_LEVEL=4
+CAMPUS=天津工业大学&天津工业大学
+BUILDING=20161008184448464922&西苑7号楼
+FLOOR=6&6层
+ROOM=20161009111811624619&1栋609
+
+# 可选：批量查询多个目标（JSON 数组，填写后会覆盖上面的单目标参数）
+# TARGETS_JSON=[{"id":"room609","name":"宿舍609","campus":"天津工业大学&天津工业大学","building":"20161008184448464922&西苑7号楼","floor":"6&6层","room":"20161009111811624619&1栋609"}]
+TARGETS_JSON=
+# 批量查询时每个房间间隔秒数（默认60）
+TARGET_QUERY_INTERVAL_SECONDS=60
+
+# 可选：指定余额字段路径，例如 data.0.value
+BALANCE_PATH=
+
+# ========== 查询通知策略 ==========
+# always | low_balance | change | never
+NOTIFY_MODE=low_balance
+LOW_BALANCE_THRESHOLD=30
+# 查询失败是否发送告警（true/false，默认true）
+NOTIFY_ON_ERROR=true
+
+# /query 接口鉴权（可选）
+API_KEY=
+
+# ========== 钉钉机器人（可选） ==========
+DINGTALK_WEBHOOK=
+DINGTALK_SECRET=
+
+# ========== 企业微信机器人（可选） ==========
+WECOM_WEBHOOK=
+
+# ========== Napcat（可选） ==========
+NAPCAT_API_URL=
+NAPCAT_TARGET_TYPE=group
+NAPCAT_GROUP_ID=
+NAPCAT_USER_ID=
+NAPCAT_TOKEN=
+
+# ========== change 模式状态存储（可选） ==========
+# 需在 wrangler.toml 中绑定 KV，变量名 STATE_KV
+STATE_KEY=last_balance
